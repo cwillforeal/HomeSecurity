@@ -1,0 +1,59 @@
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar a {
+    float: right;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown, .dropdown-sum {
+    float: right;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn, .dropdown-sum .dropbtn-sum {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropdown-sum:hover .dropbtn-sum{
+    background-color: #c0c0c0;
+}
+
+.dropdown-content, .dropdown-content-sum {
+	max-height: 250px;
+	overflow: auto;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a, .dropdown-content-sum a{
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover, .dropdown-content-sum a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content , .dropdown-sum:hover .dropdown-content-sum{
+    display: block;
+}

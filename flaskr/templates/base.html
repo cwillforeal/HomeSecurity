@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <link href="{{url_for('static',filename='styles/base.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    {% block otherlinks %}{% endblock %}
+    <style>
+        body,h1 {font-family: "Raleway", sans-serif}
+        body, html {height: 100%}
+    </style>
+    <title>League of Lords - {% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div id="navbar" class="navbar">
+	<div class="w3-display-topleft w3-padding-small w3-xlarge">THE League of Lords</div>
+    <a href="/login" >Login</a>
+    <a href="/LeagueHistory" >League History</a>
+    <div class="dropdown-sum">
+	<button class="dropbtn-sum">Year Summaries</button>
+		<div class="dropdown-content-sum">
+			{%for year in years%}
+				<a href="/YearStats/{{year}}">{{year}}</a>
+			{%endfor%}
+		</div>
+	</div>
+	<div class="dropdown">
+    <button class="dropbtn">Player History</button>
+	<div class="dropdown-content" >
+		{% for user in users %}
+			{% if user.username != 'admin' %}
+				<a href="/PlayerHistory/{{user.username}}">{{user.name}}</a>
+			{% endif %}
+		{% endfor %}
+	</div>
+    </div>
+    <a href="/" class="">Home</a>
+  </div>
+  <div id="content">{% block content %}{% endblock %}</div>
+</div>
+</body>
+</html>
+
